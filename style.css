@@ -3,8 +3,8 @@ html {
 }
 body {  
     font-family: sans-serif;
-    background: url('http://files.gamebanana.com/bitpit/spots_background_faded_solid_51862_.jpg');
-    /*background: linear-gradient(to bottom, #485563 , #29323c);*/
+    
+    background: linear-gradient(to bottom, #6a5b70 , #527e6e);
 	background-attachment:fixed;
 	background-size:100%;
 	image-rendering:auto;
@@ -47,6 +47,7 @@ header p {
   height: 50em;
   width: 100%;
   text-shadow: 0.25px 0.25px 0.25px #000000;
+  overflow: hidden;
 }
 
 .jumbotron h2 {

@@ -1,0 +1,146 @@
+html {
+	font-size: 10px;
+}
+body {  
+    font-family: sans-serif;
+    background: url('http://files.gamebanana.com/bitpit/spots_background_faded_solid_51862_.jpg');
+    /*background: linear-gradient(to bottom, #485563 , #29323c);*/
+	background-attachment:fixed;
+	background-size:100%;
+	image-rendering:auto;
+	font-weight:300;
+}
+
+header {
+  padding: 20px 0;
+}
+
+header .row,
+footer .row {
+  display: flex;
+  align-items: center;
+  
+}
+
+header h1 {
+  font-weight: 700;
+  margin: 0;
+  font-family: 'Ubuntu', sans-serif; 
+}
+
+header nav {
+  display: flex;
+  justify-content: flex-end;
+}
+
+header p {
+  padding: 0 10px;
+  margin: 0;
+}
+
+.jumbotron {
+  display: flex;
+  align-items: center;
+  background-image: url('http://bitcoinrewind.com/wp-content/uploads/2014/02/background-net10241.jpg');
+  background-size: cover;
+  color: #ffffff;
+  height: 50em;
+  width: 100%;
+  text-shadow: 0.25px 0.25px 0.25px #000000;
+}
+
+.jumbotron h2 {
+  font-size: 80px;
+  font-weight: 700;
+  margin: 0;
+  color: #000;
+}
+
+.jumbotron h3 {
+  margin: 0 0 20px;
+  color: #000;
+}
+
+
+section .row img {
+  margin: 0 0 30px;
+  width: 100%;
+  
+}
+h4 {
+	text-align: center;
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 64px;
+	letter-spacing: 3px;
+}
+
+.abtme {
+	font-family: 'Ubuntu', sans-serif;
+	margin: 16px;
+	text-align: center;
+	font-size: 18px;
+	border: dotted;
+	border-radius: 2px;
+}
+
+.col-md-6 {
+  margin: 0 0 30px;
+}
+
+.btn.btn-primary {
+  border-radius: 5px;
+  border: 0px;
+  color: #fff;
+  text-shadow: none;
+  background-color: #564864;
+}
+
+.btn.btn-primary:hover {
+  color: #ffffff;
+  background-color: #746187;
+}
+
+.btn .btn-sec:hover {
+	color: #000;
+}
+
+.btn-secondary {
+  background-color: Magenta;
+  color: #ffffff;
+  margin: 0 0 30px;
+}
+section.container {
+	border: solid;
+	border-radius: 8px;
+}
+
+footer {
+  font-size: 12px;
+  padding: 20px 0;
+}
+
+footer .col-sm-8 {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.container p
+{
+	font-size: 20px;
+	padding: 16px;
+	
+}
+.container nav 
+{ 
+ border-radius: 5rem;
+  border: 0px;
+  color: #fff;
+  text-shadow: none;
+  background-color: #156d3f;
+}
+.container a:link {
+	color: #000;
+}
+.container a:hover{
+	color: #fff;
+}

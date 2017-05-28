@@ -127,7 +127,7 @@ footer .col-sm-8 {
 
 .container p
 {
-	font-size: 20px;
+	font-size: 2rem;
 	padding: 16px;
 	
 }
@@ -145,3 +145,4 @@ footer .col-sm-8 {
 .container a:hover{
 	color: #fff;
 }
+  

@@ -157,12 +157,13 @@ footer .col-sm-8 {
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
     display: none;
-    position: absolute;
+    position: relative;
     background-color: #8473a6;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
     z-index: 1;
 	top: 0;
+	left: 0;
 	border-radius: 10px;
 }
 

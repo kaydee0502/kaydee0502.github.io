@@ -68,20 +68,21 @@ section .row img {
   width: 100%;
   
 }
-h4 {
+.subhead h4, .subhead h5 {
 	text-align: center;
 	font-family: 'Ubuntu', sans-serif;
-	font-size: 64px;
+	font-size: 32px;
 	letter-spacing: 3px;
 }
 
 .abtme {
 	font-family: 'Ubuntu', sans-serif;
-	margin: 16px;
+	margin: 32px;
 	text-align: center;
 	font-size: 18px;
-	border: dotted;
-	border-radius: 2px;
+	border-bottom: solid;
+   padding-bottom: 32px;
+  
 }
 
 .col-md-6 {
@@ -110,11 +111,7 @@ h4 {
   color: #ffffff;
   margin: 0 0 30px;
 }
-section.container {
-	border: solid;
-	border-radius: 8px;
-	box-shadow: 10px 10px 5px #888888;
-}
+
 
 footer {
   font-size: 12px;
@@ -189,4 +186,3 @@ footer .col-sm-8 {
 .dropdown:hover .dropbtn {
     background-color: #3e8e41;
 }
-  

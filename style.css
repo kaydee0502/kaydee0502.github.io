@@ -68,7 +68,7 @@ section .row img {
   width: 100%;
   
 }
-.subhead h4, .subhead h5{
+.subhead h4, .subhead h5, .subhead h6 {
 	text-align: center;
 	font-family: 'Ubuntu', sans-serif;
 	font-size: 32px;

@@ -1444,6 +1444,20 @@ p.reply i{
   margin: 0.3em 0;
   line-height: 1.3em;
 }
+.con-text p a{
+    color: #34495E;
+  font-weight: 400;
+  font-size: 0.9em;
+}
+.con-text p a:hover{
+	color:#fff200;
+	transition:0.5s all;
+	-webkit-transition:0.5s all;
+	-moz-transition:0.5s all;
+	-o-transition:0.5s all;
+	-ms-transition:0.5s all;
+	text-decoration:underline;
+}
 .contact-head {
   text-align: left;
   padding: 0 0 0 27px;

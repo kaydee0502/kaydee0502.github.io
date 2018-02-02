@@ -78,6 +78,7 @@ label{
 	text-transform:uppercase;
 	display:inline-block;
 	  margin-right: 2em;
+		color: blueviolet;
 }
 .top-menu li a{
 	color:#FFFFFF;

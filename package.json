@@ -1,0 +1,25 @@
+{
+  "name": "xitiz",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "npm run watch:css && vite",
+    "preview": "vite preview",
+    "start": "npm run watch:css && react-scripts start",
+    "build": "npm run watch:css && vite build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "watch:css": "postcss src/styles/tailwind.css -o src/styles/output.css"
+  },
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^1.0.7",
+    "autoprefixer": "^10.4.0",
+    "postcss": "^8.4.4",
+    "postcss-cli": "^9.0.2",
+    "tailwindcss": "^2.2.19",
+    "vite": "^2.7.0"
+  }
+}

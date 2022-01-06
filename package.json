@@ -11,6 +11,7 @@
     "watch:css": "postcss src/styles/tailwind.css -o src/styles/output.css"
   },
   "dependencies": {
+    "@headlessui/react": "^1.4.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },

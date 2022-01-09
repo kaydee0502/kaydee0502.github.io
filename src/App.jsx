@@ -3,10 +3,12 @@ import logo from "./logo.svg";
 import "./App.css";
 import "./index.css";
 import Ground from "./Ground";
+import { useDispatch } from "react-redux";
+import { incremented } from "./Store";
 
 function App() {
   const [count, setCount] = useState(0);
-
+  const dispatch = useDispatch();
   return (
     <>
       <div className="bg-gray-900 p-20 h-screen flex items-start flex-col">
@@ -20,7 +22,12 @@ function App() {
             <Ground />
           </div>
         </div>
-        <button className="p-3 bg-green-600 rounded-lg text-white mt-5 hover:bg-gray-600">
+        <button
+          onClick={() => {
+            dispatch(incremented());
+          }}
+          className="p-3 bg-green-600 rounded-lg text-white mt-5 hover:bg-gray-600"
+        >
           Hello Friends 🚀
         </button>
       </div>

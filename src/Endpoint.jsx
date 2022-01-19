@@ -49,7 +49,7 @@ export default function Endpoint() {
     <Listbox value={selected} onChange={setSelected}>
       {({ open }) => (
         <>
-          <div className="mt-1 relative py-2 w-3/4 inline-block">
+          <div className="mt-1 relative py-2 w-4/6 inline-block">
             <Listbox.Button className="relative w-full bg-white border border-gray-300 rounded-r-md shadow-sm pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
               <span className="flex items-center">
                 <span className="ml-3 block truncate">{selected.value}</span>

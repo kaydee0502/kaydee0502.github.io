@@ -24,7 +24,7 @@ function App() {
         </div>
         <button
           onClick={() => {
-            dispatch(setVerb("PUT"));
+            console.log("lmao");
           }}
           className="p-3 bg-green-600 rounded-lg text-white mt-5 hover:bg-gray-600"
         >

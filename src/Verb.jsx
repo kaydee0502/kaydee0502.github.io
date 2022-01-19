@@ -1,9 +1,11 @@
 /* This example requires Tailwind CSS v2.0+ */
-import { Fragment, useState } from "react";
+import { Fragment, useState, useEffect } from "react";
 import { Listbox, Transition } from "@headlessui/react";
 import { CheckIcon, SelectorIcon } from "@heroicons/react/solid";
+import { useDispatch } from "react-redux";
+import { setVerb } from "./Store";
 
-const people = [
+const verbs = [
   {
     id: 1,
     name: "GET",
@@ -35,7 +37,12 @@ function classNames(...classes) {
 }
 
 export default function Verb() {
-  const [selected, setSelected] = useState(people[0]);
+  const [selected, setSelected] = useState(verbs[0]);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(setVerb(selected.name));
+  }, [selected]);
 
   return (
     <Listbox value={selected} onChange={setSelected}>
@@ -62,9 +69,12 @@ export default function Verb() {
               leaveTo="opacity-0"
             >
               <Listbox.Options className="absolute z-10 mt-1 w-full bg-white shadow-lg max-h-56 rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm">
-                {people.map((person) => (
+                {verbs.map((person) => (
                   <Listbox.Option
                     key={person.id}
+                    onClick={() => {
+                      console.log("lmao");
+                    }}
                     className={({ active }) =>
                       classNames(
                         active ? "text-white bg-indigo-600" : "text-gray-900",

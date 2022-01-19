@@ -4,7 +4,7 @@ import "./App.css";
 import "./index.css";
 import Ground from "./Ground";
 import { useDispatch } from "react-redux";
-import { incremented } from "./Store";
+import { setVerb } from "./Store";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -24,7 +24,7 @@ function App() {
         </div>
         <button
           onClick={() => {
-            dispatch(incremented());
+            dispatch(setVerb("PUT"));
           }}
           className="p-3 bg-green-600 rounded-lg text-white mt-5 hover:bg-gray-600"
         >

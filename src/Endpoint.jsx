@@ -4,12 +4,17 @@ import { Listbox, Transition } from "@headlessui/react";
 import { CheckIcon, SelectorIcon } from "@heroicons/react/solid";
 import { useDispatch } from "react-redux";
 import { store } from "./Store";
+import { setOption } from "./Store";
 
 const options = {
   GET: [
     {
       id: 1,
       value: "This is GET",
+    },
+    {
+      id: 2,
+      value: "This is GET 2",
     },
   ],
   POST: [
@@ -38,19 +43,25 @@ function classNames(...classes) {
 
 export default function Endpoint() {
   const selectedVerb = store.getState();
-  const [selected, setSelected] = useState(options[selectedVerb.value][0]);
+  console.log(selectedVerb);
+  const [selected, setSelected] = useState(options[selectedVerb.verbValue][0]);
+  const dispatch = useDispatch();
 
-  store.subscribe(() => {
-    const newState = store.getState();
-    setSelected(options[newState.value][0]);
-  });
+  // store.subscribe(() => {
+  //   const newState = store.getState();
+  //   setSelected(options[newState.verbValue][0]);
+  // });
+
+  useEffect(() => {
+    dispatch(setOption(selected.value));
+  }, [selected]);
 
   return (
     <Listbox value={selected} onChange={setSelected}>
       {({ open }) => (
         <>
-          <div className="mt-1 relative py-2 w-4/6 inline-block">
-            <Listbox.Button className="relative w-full bg-white border border-gray-300 rounded-r-md shadow-sm pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+          <div className="mt-1 relative py-2 md:w-4/6 md:inline-block">
+            <Listbox.Button className="relative w-full bg-white border border-gray-300 md:rounded-r-md sm:rounded-md shadow-sm pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 text-sm">
               <span className="flex items-center">
                 <span className="ml-3 block truncate">{selected.value}</span>
               </span>
@@ -70,7 +81,7 @@ export default function Endpoint() {
               leaveTo="opacity-0"
             >
               <Listbox.Options className="absolute z-10 mt-1 w-full bg-white shadow-lg max-h-56 rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm">
-                {options[selectedVerb.value].map((option) => (
+                {options[selectedVerb.verbValue].map((option) => (
                   <Listbox.Option
                     key={option.id}
                     className={({ active }) =>

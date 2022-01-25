@@ -48,8 +48,8 @@ export default function Verb() {
     <Listbox value={selected} onChange={setSelected}>
       {({ open }) => (
         <>
-          <div className="mt-1 relative py-2 w-1/6 inline-block z-10">
-            <Listbox.Button className="relative w-full bg-white border border-gray-300 border-r-0 rounded-l-md shadow-sm pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+          <div className="mt-1 relative py-2 md:w-1/6 md:inline-block z-10">
+            <Listbox.Button className="relative w-full bg-white border border-gray-300 border-r-0 sm:rounded-lg md:rounded-l-md shadow-sm pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 text-sm">
               <span className="flex items-center">
                 <span className="ml-3 block truncate">{selected.name}</span>
               </span>

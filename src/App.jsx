@@ -11,7 +11,7 @@ function App() {
   const dispatch = useDispatch();
   return (
     <>
-      <div className="bg-gray-900 p-20 h-screen flex items-start flex-col">
+      <div className="bg-gray-900 md:p-20 sm:p-10 h-screen flex items-start flex-col">
         <h1 className="text-5xl text-white">XitiZ</h1>
         <p className="text-gray-400 mt-5 text-lg">
           Hi Devs, my name is Kshitij Dhama, a Software Developer who loves

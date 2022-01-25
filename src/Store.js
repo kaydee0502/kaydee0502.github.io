@@ -3,16 +3,21 @@ import { createSlice, configureStore } from "@reduxjs/toolkit";
 const verbSlice = createSlice({
   name: "verb",
   initialState: {
-    value: "GET",
+    verbValue: "GET",
+    optionValue: "",
   },
   reducers: {
     setVerb: (state, action) => {
-      state.value = action.payload;
+      state.verbValue = action.payload;
+    },
+
+    setOption: (state, action) => {
+      state.optionValue = action.payload;
     },
   },
 });
 
-export const { setVerb } = verbSlice.actions;
+export const { setVerb, setOption } = verbSlice.actions;
 
 export const store = configureStore({
   reducer: verbSlice.reducer,

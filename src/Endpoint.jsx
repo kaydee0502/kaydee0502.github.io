@@ -5,6 +5,7 @@ import { CheckIcon, SelectorIcon } from "@heroicons/react/solid";
 import { useDispatch } from "react-redux";
 import { store } from "./Store";
 import { setOption } from "./Store";
+import { connect } from "react-redux";
 
 const options = {
   GET: [
@@ -41,9 +42,15 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function Endpoint() {
+const mapStateToProps = (state) => {
+  return {
+    verbValue: state.verbValue,
+  };
+};
+
+function Endpoint(props) {
   const selectedVerb = store.getState();
-  console.log(selectedVerb);
+  // console.log(selectedVerb);
   const [selected, setSelected] = useState(options[selectedVerb.verbValue][0]);
   const dispatch = useDispatch();
 
@@ -53,8 +60,10 @@ export default function Endpoint() {
   // });
 
   useEffect(() => {
+    setSelected(options[props.verbValue][0]);
     dispatch(setOption(selected.value));
-  }, [selected]);
+    console.log(props);
+  }, [props.verbValue]);
 
   return (
     <Listbox value={selected} onChange={setSelected}>
@@ -127,3 +136,5 @@ export default function Endpoint() {
     </Listbox>
   );
 }
+
+export default connect(mapStateToProps)(Endpoint);

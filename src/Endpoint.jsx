@@ -54,16 +54,15 @@ function Endpoint(props) {
   const [selected, setSelected] = useState(options[selectedVerb.verbValue][0]);
   const dispatch = useDispatch();
 
-  // store.subscribe(() => {
-  //   const newState = store.getState();
-  //   setSelected(options[newState.verbValue][0]);
-  // });
-
   useEffect(() => {
     setSelected(options[props.verbValue][0]);
-    dispatch(setOption(selected.value));
     console.log(props);
   }, [props.verbValue]);
+
+  useEffect(() => {
+    dispatch(setOption(selected.value));
+    console.log(props);
+  }, [selected]);
 
   return (
     <Listbox value={selected} onChange={setSelected}>

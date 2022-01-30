@@ -9,22 +9,6 @@ const mapStateToProps = (state) => {
 };
 
 const Result = (props) => {
-  let code = `
-  {
-    "full_name": "Kshitij Dhama",
-    "pronouns": "he/him/his",
-    "age": 21,
-    "occupation": "Software Developer(Ruby on Rails)",
-    "currently_at": "Jaipur, India",
-    "interests":[
-      "cars (JDM <3)",
-      "video games",
-      "anime",
-      "alternative rock songs"
-    ]
-  }
-  `.trim();
-
   useEffect(() => {
     setTimeout(() => Prism.highlightAll(), 0);
   });
@@ -32,7 +16,7 @@ const Result = (props) => {
   const renderJSON = () => {
     if (props.dataValue && props.dataValue.length > 0) {
       try {
-        return JSON.parse(props.dataValue);
+        return props.dataValue;
       } catch (err) {
         console.log(err);
         return props.dataValue;
@@ -43,10 +27,12 @@ const Result = (props) => {
   };
 
   return (
-    <div className="p-5 bg-gray-700 rounded-b-lg">
+    <div className="p-5 pt-0 bg-gray-700 rounded-b-lg">
       <div className="w-full p-4 bg-slate-600 rounded-lg">
         <pre className="line-numbers">
-          <code className="language-js">{renderJSON()}</code>
+          <code className="codeground language-js block overflow-y-scroll h-80 break-words">
+            {renderJSON()}
+          </code>
         </pre>
       </div>
     </div>

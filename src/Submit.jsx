@@ -15,7 +15,7 @@ const Submit = (props) => {
   const [apidata, setApidata] = useState([]);
   const getData = async () => {
     const response = await fetch(
-      "http://localhost:8000/datum/prepare_loadout?verb=GET&option=about_me",
+      `http://localhost:8000/datum/prepare_loadout?verb=${props.verbValue}&option=${props.optionValue.slug}`,
       {
         headers: {
           "Content-Type": "application/json",

@@ -12,10 +12,12 @@ const options = {
     {
       id: 1,
       value: "About Kshitij!",
+      slug: "about_me",
     },
     {
       id: 2,
       value: "Skills",
+      slug: "skills",
     },
   ],
   POST: [
@@ -59,7 +61,7 @@ function Endpoint(props) {
   }, [props.verbValue]);
 
   useEffect(() => {
-    dispatch(setOption(selected.value));
+    dispatch(setOption(selected));
     console.log(props);
   }, [selected]);
 

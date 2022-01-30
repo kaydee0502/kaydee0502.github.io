@@ -17,12 +17,8 @@ function App() {
       <>
         <div className="bg-gray-900 md:p-20 sm:p-10 flex items-start flex-col h-screen overflow-auto">
           <h1 className="text-5xl text-white">XitiZ</h1>
-          <p className="text-gray-400 mt-5 text-lg">
-            Hi Devs, my name is Kshitij Dhama, a Software Developer who loves
-            problem solving and spending hours on obvious bugs xD
-          </p>
           <div className="w-full flex justify-center my-5">
-            <div className="w-11/12">
+            <div className="w-full">
               <Ground />
               <Result />
             </div>

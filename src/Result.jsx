@@ -1,7 +1,14 @@
 import React, { useEffect } from "react";
 import Prism from "prismjs";
+import { connect } from "react-redux";
 
-const Result = () => {
+const mapStateToProps = (state) => {
+  return {
+    dataValue: state.dataValue,
+  };
+};
+
+const Result = (props) => {
   let code = `
   {
     "full_name": "Kshitij Dhama",
@@ -22,15 +29,28 @@ const Result = () => {
     setTimeout(() => Prism.highlightAll(), 0);
   });
 
+  const renderJSON = () => {
+    if (props.dataValue && props.dataValue.length > 0) {
+      try {
+        return JSON.parse(props.dataValue);
+      } catch (err) {
+        console.log(err);
+        return props.dataValue;
+      }
+    } else {
+      return props.dataValue;
+    }
+  };
+
   return (
     <div className="p-5 bg-gray-700 rounded-b-lg">
       <div className="w-full p-4 bg-slate-600 rounded-lg">
         <pre className="line-numbers">
-          <code className="language-js">{code}</code>
+          <code className="language-js">{renderJSON()}</code>
         </pre>
       </div>
     </div>
   );
 };
 
-export default Result;
+export default connect(mapStateToProps)(Result);

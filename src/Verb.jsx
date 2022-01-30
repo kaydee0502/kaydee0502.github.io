@@ -72,9 +72,6 @@ export default function Verb() {
                 {verbs.map((person) => (
                   <Listbox.Option
                     key={person.id}
-                    onClick={() => {
-                      console.log("lmao");
-                    }}
                     className={({ active }) =>
                       classNames(
                         active ? "text-white bg-indigo-600" : "text-gray-900",

@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { store } from "./Store";
-import { setOption } from "./Store";
+import { setData } from "./Store";
 import { connect } from "react-redux";
 
 const mapStateToProps = (state) => {
@@ -11,12 +11,26 @@ const mapStateToProps = (state) => {
   };
 };
 
-const getData = async () => {
-  const response = await fetch("http://localhost:8000/datum");
-  return await response.json();
-};
-
 const Submit = (props) => {
+  const [apidata, setApidata] = useState([]);
+  const getData = async () => {
+    const response = await fetch(
+      "http://localhost:8000/datum/prepare_loadout?verb=GET&option=about_me",
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    const res = await response.json();
+    setApidata(res);
+  };
+
+  useEffect(() => {
+    dispatch(setData(apidata.payload));
+  }, [apidata]);
+
+  const dispatch = useDispatch();
   return (
     <div className="mt-1 relative py-2 md:w-1/6 md:inline-block md:px-2">
       <button

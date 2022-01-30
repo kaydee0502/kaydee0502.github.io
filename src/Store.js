@@ -5,6 +5,7 @@ const verbSlice = createSlice({
   initialState: {
     verbValue: "GET",
     optionValue: "",
+    dataValue: "",
   },
   reducers: {
     setVerb: (state, action) => {
@@ -14,10 +15,14 @@ const verbSlice = createSlice({
     setOption: (state, action) => {
       state.optionValue = action.payload;
     },
+
+    setData: (state, action) => {
+      state.dataValue = action.payload;
+    },
   },
 });
 
-export const { setVerb, setOption } = verbSlice.actions;
+export const { setVerb, setOption, setData } = verbSlice.actions;
 
 export const store = configureStore({
   reducer: verbSlice.reducer,

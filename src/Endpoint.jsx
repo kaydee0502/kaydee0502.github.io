@@ -11,11 +11,11 @@ const options = {
   GET: [
     {
       id: 1,
-      value: "This is GET",
+      value: "About Kshitij!",
     },
     {
       id: 2,
-      value: "This is GET 2",
+      value: "Skills",
     },
   ],
   POST: [
@@ -56,7 +56,6 @@ function Endpoint(props) {
 
   useEffect(() => {
     setSelected(options[props.verbValue][0]);
-    console.log(props);
   }, [props.verbValue]);
 
   useEffect(() => {

@@ -24,6 +24,16 @@ const options = {
       value: "Education",
       slug: "education",
     },
+    {
+      id: 4,
+      value: "Experience",
+      slug: "experience",
+    },
+    {
+      id: 5,
+      value: "Projects",
+      slug: "projects",
+    },
   ],
   POST: [
     {
